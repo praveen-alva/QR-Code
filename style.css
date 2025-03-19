@@ -1,0 +1,148 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: rgb(185,185,255);
+    padding: 20px; /* Added padding for small screens */
+}
+
+.container {
+    width: 100%;
+    max-width: 400px; /* Maximum width */
+    background-color: white;
+    border-radius: 5px;
+    padding: 25px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: height 0.2s ease;
+}
+
+h1 {
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#text, #generate {
+    width: 100%;
+    height: 50px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+}
+
+#text {
+    margin-top: 10px;
+    font-size: 16px;
+    padding: 1px 16px;
+    border: 1px solid #999;
+}
+
+#generate {
+    color: white;
+    cursor: pointer;
+    margin-top: 20px;
+    font-size: 16px; /* Fixed typo from font-family */
+    background-color: rgb(29, 93, 136);
+}
+
+.qr-code {
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ccc;
+}
+
+#qr-img {
+    max-width: 100%; /* Make image responsive */
+    height: auto;
+    padding-top: 10px;
+}
+
+.img1 {
+    padding: 20px; /* Reduced from 30px */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.container.active {
+    height: auto; /* Let content determine height */
+}
+
+/* Make QR code visible when active */
+.container.active .qr-code {
+    opacity: 1;
+}
+
+/* Media Queries for Responsiveness */
+
+/* Tablets and smaller laptops */
+@media screen and (max-width: 768px) {
+    .container {
+        max-width: 350px;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    #text, #generate {
+        height: 45px;
+        font-size: 14px;
+    }
+
+    #qr-img {
+        padding-left: 0; /* Remove fixed padding */
+    }
+}
+
+/* Mobile devices */
+@media screen and (max-width: 480px) {
+    .container {
+        max-width: 300px;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+
+    #text, #generate {
+        height: 40px;
+        font-size: 13px;
+    }
+
+    #generate {
+        margin-top: 15px;
+    }
+
+    .img1 {
+        padding: 15px;
+    }
+}
+
+/* Very small screens */
+@media screen and (max-width: 320px) {
+    .container {
+        max-width: 100%;
+        margin: 0 10px;
+    }
+
+    h1 {
+        font-size: 18px;
+    }
+
+    #text {
+        padding: 1px 10px;
+    }
+}
